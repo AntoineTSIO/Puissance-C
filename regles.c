@@ -57,15 +57,38 @@ char sortieTableau(int cmax , char* jc) //refais jouer joueur s il sort du table
     }
 }
 
-void AjouterPion(int rows){
-    int collone = column;
-    while(grid[rows][co])
-}
+int AjouterPion(int collone,char pion){   //place le pion au fond de la ligne
+    int y = 0;
+    while(grid[collone][collone] !=9 || collone < column){
+        collone--;
+    }
+    if(collone == column){
+        //dans ce cas le coup est impossible, a voir ce qu'il faudras faire
+    }
+    grid[rows][y] = pion;
+    return y;
+}   //appeler la fonction qui vérifie la victoire après ce coup.
 
 
 
-int win(char** grillage, int colonne)
+char win( int colonne,char pion)
 {
+    int x=0; //recherche de l axe X (proposition du prof pour le faire)
+    int y = AjouterPion(x,pion);
+    int i=0;
+
+
+    while(i == 9)
+    {
+        if(grid[colonne][colonne]!='9')
+        {
+            i= grid[x][colonne];
+
+        }
+        x++;
+    }
+    return pion * (checkDiagonal(colonne,y,pion) || checkHorizontal(colonne,y,pion) || checkVertical(colonne,y,pion));
+    // si l'un de ces 3 cas de figures est vrai alors on renvoie le caractere du gagnant sinon 0
 
 }
 

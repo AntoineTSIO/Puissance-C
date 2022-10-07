@@ -35,7 +35,12 @@ void initGrid(int maxColumn, int maxRows, char** grid){
     grid = malloc(sizeof(int*)*maxRows);
     for(int indexRows=0; indexRows < maxRows; indexRows++){ // seconde dimention de la grille intégré
         grid[indexRows] = malloc(sizeof(int*)*maxColumn);
+        for (int e = 0; e < maxColumn; e++) {
+            grid[indexRows][e] = ' ';
+        }
     }
+
+
 }
 
 void freeBoard(){
