@@ -6,7 +6,7 @@
 #include "../structures.c"
 
 
-char** grid;    //max = grid[6][7]
+//char** grid;    //max = grid[6][7]
 int rows = 7;   // X max, max de la largeur de la grille
 int column = 6; // Y max, max de la hauteur de la grille
 int nbPourVictoire = 4; //nb de pions a alligner pour gagner
@@ -34,16 +34,14 @@ void initJoueur(Player* Joueur){
 void initGrid(int maxColumn, int maxRows, char** grid){
     grid = malloc(sizeof(int*)*maxRows);
     for(int indexRows=0; indexRows < maxRows; indexRows++){ // seconde dimention de la grille intégré
-        grid[indexRows] = malloc(sizeof(int*)*maxColumn);
+        grid[indexRows] = malloc(sizeof(int)*maxColumn);
         for (int e = 0; e < maxColumn; e++) {
             grid[indexRows][e] = ' ';
         }
     }
-
-
 }
 
-void freeBoard(){
+void freeBoard(char** grid){
     for(int i = 0; i < column;i++){
         for(int j = 0; j < rows; j++){
             grid[i][j] = 9;
@@ -51,7 +49,7 @@ void freeBoard(){
     }
 }
 
-void killGrid(){
+void killGrid(char** grid){
     for(int i = 0; i < rows; i++){
         free(grid[i]);
     }

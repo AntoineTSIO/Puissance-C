@@ -67,9 +67,11 @@ int main() {
         {
             if (grid[0][j] != NULL){
                 count = count + 1;
-                if (count == columnN){
+                //printf("  count %d   \n", count);
+                if (count == columnN) {
                     printf("MATCH NUL\n");
-                    break;
+                    //print_game_over();
+                    goto end;
                 }
             }
         }
@@ -85,7 +87,7 @@ int main() {
         printf("\n");
     }*/
 
-    killGrid(); //libère l'espace mémoire de la grille.
+    killGrid(grid); //libère l'espace mémoire de la grille.
     for(int i = 0; i < joueur; i++){
         free(player[i]);
     }

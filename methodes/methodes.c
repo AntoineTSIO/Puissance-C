@@ -61,7 +61,7 @@ Player *check_winner_vertical(Board *board){
 
 void print_grid(char** grid, int row, int column) {
     for(int i=0;i<row;i++){    //boucle pour afficher la grille
-        printf("|");
+        printf("| ");
         for(int j=0;j<column;j++){
             printf("%c |",grid[i][j]);
         }
