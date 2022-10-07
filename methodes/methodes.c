@@ -21,9 +21,9 @@ void print_game_over(){ // affiche la défaite
 
 void print_winner(const Player *player){ // affiche la victoire
     printf("====================\n");
-    printf("\t\tWinner is %c\n", player->token);
-    printf("\t\tWon in %d turns !\n", player->playedTurnCount);
-    printf("====================");
+    printf("\tWinner is %c\n", player->token);
+    printf("\tWon in %d turns !\n", player->playedTurnCount);
+    printf("====================\n");
 };
 
 int wait_column_input(Player *player){ // prend la column ou le joueur veut jouer

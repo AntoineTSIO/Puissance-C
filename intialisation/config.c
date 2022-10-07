@@ -34,11 +34,12 @@ void initJoueur(Player* Joueur){
 void initGrid(int maxColumn, int maxRows, char** grid){
     grid = malloc(sizeof(int*)*maxRows);
     for(int indexRows=0; indexRows < maxRows; indexRows++){ // seconde dimention de la grille intégré
-        grid[indexRows] = malloc(sizeof(int)*maxColumn);
+        grid[indexRows] = malloc(sizeof(char)*maxColumn);
         for (int e = 0; e < maxColumn; e++) {
             grid[indexRows][e] = ' ';
         }
     }
+    return grid;
 }
 
 void freeBoard(char** grid){
@@ -89,4 +90,5 @@ void initPartie(){  //attention
 
     fclose(fichierConfig);
 }
+ */
 

@@ -53,6 +53,7 @@ int main() {
                 token = player[indexPlayer]->token;
                 indexPlayer = indexPlayer+1%joueur;
                 grid[i][columnChoice] = token;
+                //player[indexPlayer]->playedTurnCount+=1;
             }
             else {
                 //printf("entrée condition else\n");
@@ -60,6 +61,7 @@ int main() {
                     continue;
                 } else {
                     grid[i-1][columnChoice] = token;
+                    //player[indexPlayer]->playedTurnCount+=1;
                 }
             }
         }
