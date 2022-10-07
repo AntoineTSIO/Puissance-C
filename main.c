@@ -39,6 +39,8 @@ int main() {
         printf("\n");
     }*/
     int count = 0;
+    int indexPlayer = 0;
+
     while (1){
         int columnChoice = wait_column_input(player); // Récupération du choix de l'utilisateur
         for (int i = 0; i < rawN; ++i) {
@@ -48,6 +50,8 @@ int main() {
             }
             else if (grid[i][columnChoice] == ' ' && i == rawN-1){
                 //printf("entrée condition else if\n");
+                token = player[indexPlayer]->token;
+                indexPlayer = indexPlayer+1%joueur;
                 grid[i][columnChoice] = token;
             }
             else {
@@ -64,7 +68,8 @@ int main() {
             if (grid[0][j] != NULL){
                 count = count + 1;
                 if (count == columnN){
-                    printf("MATCH NUL");
+                    printf("MATCH NUL\n");
+                    break;
                 }
             }
         }

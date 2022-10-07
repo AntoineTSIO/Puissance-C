@@ -40,7 +40,7 @@ int play(const Board *board, Player *player, int column){ // ajoute un jeton dan
 };
 
 Player *create_player(const char *color, char token){
-    Player * player = malloc(sizeof(Player)*3);
+    Player * player = malloc(sizeof(Player));
     player->token = token;
     player->color = color;
     player->playedTurnCount = 0;
