@@ -3,4 +3,4 @@ project(Puissance_C C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Puissance_C main.c)
+add_executable(Puissance_C main.c )
